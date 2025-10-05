@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  auth-system:
+    build: .
+    container_name: auth_system
+    volumes:
+      - auth_data:/app/data
+    stdin_open: true
+    tty: true
+    command: python main.py
+
+volumes:
+  auth_data:
